@@ -1,0 +1,38 @@
+### 测试需求列表
+GET http://localhost:8080/api/demand/list
+
+### 测试企业列表
+GET http://localhost:8080/api/enterprise/list
+### 场景1：物流需求应该匹配到物流企业
+GET http://localhost:8080/api/demand/88/with-matches
+
+### 场景2：电池需求应该匹配到电池企业
+GET http://localhost:8080/api/demand/90/with-matches
+
+### 场景3：农业需求应该匹配到农业无人机企业
+GET http://localhost:8080/api/demand/91/with-matches
+
+### 场景4：导航需求应该匹配到导航技术企业
+GET http://localhost:8080/api/demand/100/with-matches
+
+### 测试算法接口直接调用
+GET http://localhost:8080/api/algorithm/demand/1/matches
+
+### 发布新需求测试
+POST http://localhost:8080/api/demand/publish
+Content-Type: application/json
+
+{
+  "title": "测试新需求 - 需要物流无人机配送",
+  "description": "寻找能够提供城市内短途物流无人机配送服务的企业，要求有实际运营经验和相关资质认证",
+  "publisherId": 150,
+  "status": "pending"
+}
+
+
+### 查看新发布的需求的匹配结果
+GET http://localhost:8080/api/demand/105/with-matches
+
+
+
+
